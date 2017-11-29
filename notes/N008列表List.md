@@ -163,10 +163,10 @@ Python包含以下方法:
 | 3    | [list.extend(seq)](http://www.runoob.com/python/att-list-extend.html)在列表末尾一次性追加另一个序列中的多个值（用新列表扩展原来的列表） |
 | 4    | [list.index(obj)](http://www.runoob.com/python/att-list-index.html)从列表中找出某个值第一个匹配项的索引位置 |
 | 5    | [list.insert(index, obj)](http://www.runoob.com/python/att-list-insert.html)将对象插入列表 |
-| 6    | [list.pop(obj=list[-1\])](http://www.runoob.com/python/att-list-pop.html)移除列表中的一个元素（默认最后一个元素），并且返回该元素的值 |
+| 6    | [list.pop(obj=list[-1])](http://www.runoob.com/python/att-list-pop.html)移除列表中的一个元素（默认最后一个元素），并且返回该元素的值 |
 | 7    | [list.remove(obj)](http://www.runoob.com/python/att-list-remove.html)移除列表中某个值的第一个匹配项 |
 | 8    | [list.reverse()](http://www.runoob.com/python/att-list-reverse.html)反向列表中元素 |
-| 9    | [list.sort([func\])](http://www.runoob.com/python/att-list-sort.html)对原列表进行排序 |
+| 9    | [list.sort([func])](http://www.runoob.com/python/att-list-sort.html)对原列表进行排序 |
 
 
 
