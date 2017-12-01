@@ -54,3 +54,11 @@ print globvar
 globAdd(3)
 print globvar
 
+print "-----------------------------"
+def reverse(list):
+	for i in range(0, len(list) / 2):
+		list[i], list[-i - 1] = list[-i - 1], list[i]
+l = [1, 2, 3, 4, 5, 6]
+print l
+reverse(l)
+print l
