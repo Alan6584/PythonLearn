@@ -43,3 +43,14 @@ print "-----------------------------"
 add = lambda a,b: a+b
 print "add(2,3) :",add(2,3)
 print "add(12,13) :",add(12,13)
+
+print "-----------------------------"
+globvar = 0
+def globAdd(a):
+	global globvar #使用global声明全局变量
+	globvar += a
+	return
+print globvar
+globAdd(3)
+print globvar
+
