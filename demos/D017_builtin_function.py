@@ -77,7 +77,42 @@ list = ['a', 'b', 'c']
 for i, element in enumerate(list):
 	print i, list[i], element
 print "----------------------------------"
+
 print "***********************************"
+# filter() 用于过滤序列，过滤掉不符合条件的元素，返回由符合条件元素组成的新列表
+
+def is_odd(n):
+	return n % 2 == 1
+list = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+newlist = filter(is_odd, list)
+print list
+print newlist
+print "----------------------------------"
+
+print "***********************************"
+# map() 会根据提供的函数对指定序列做映射
+
+def square(x):
+	return x ** 2
+list = [1, 2, 3, 4, 5, 6]
+list1 = map(square, list)
+list2 = map(lambda x: x ** 2, list) #使用lambda匿名函数
+print list
+print list1
+print list2
+print "----------------------------------"
+
+print "***********************************"
+
+print "----------------------------------"
+
+print "***********************************"
+
+print "----------------------------------"
+
+print "***********************************"
+
+print "----------------------------------"
 
 
 
