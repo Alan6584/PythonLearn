@@ -149,8 +149,16 @@ print "x | y : ",x | y
 print "x & y : ",x & y
 print "x - y : ",x - y
 print "----------------------------------"
-print "***********************************"
 
+print "***********************************"
+# sorted() 对所有可迭代的对象进行排序操作,返回新列表
+#  key 和 reverse 比一个等价的 cmp 函数处理速度要快。这是因为对于每个列表元素，cmp 都会被调用多次，而 key 和 reverse 只被调用一次
+
+students = [('Army', 'A', 16), ('Jane', 'B', 17), ('Tom', 'C', 15)]
+print students
+print sorted(students, cmp=lambda x,y:cmp(x[2],y[2])) #按年龄排序
+print sorted(students, key=lambda x:x[1]) #按成绩排序
+print sorted(students, key=lambda x:x[2], reverse=True) #按年龄降序排列
 print "----------------------------------"
 print "***********************************"
 
