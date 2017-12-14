@@ -160,13 +160,20 @@ print sorted(students, cmp=lambda x,y:cmp(x[2],y[2])) #按年龄排序
 print sorted(students, key=lambda x:x[1]) #按成绩排序
 print sorted(students, key=lambda x:x[2], reverse=True) #按年龄降序排列
 print "----------------------------------"
+
 print "***********************************"
+# zip() 用于将可迭代的对象作为参数，将对象中对应的元素打包成一个个元组，然后返回由这些元组组成的列表
+
+name = ['dave', 'jane', 'tom']
+age = [15, 18, 16]
+grade = ['A', 'C', 'B']
+
+ziped = zip(name, age, grade)
+print "zip(name, age, grade) : ",ziped
 
 print "----------------------------------"
-print "***********************************"
-
-print "----------------------------------"
-print "***********************************"
+unziped = zip(*ziped)
+print "unziped : ",unziped
 
 print "----------------------------------"
 print "***********************************"
