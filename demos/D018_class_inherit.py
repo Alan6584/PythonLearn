@@ -6,18 +6,23 @@ class Person:
 	def __init__(self, name, age):
 		self.name = name
 		self.age = age
-		print "init()--->name = %s, age = %d" % (self.name, self.age)
+		print "Person()--->init()--->name = %s, age = %d" % (self.name, self.age)
 
 	def display(self):
-		print "name = %s, age = %d" % (self.name, self.age)
+		print "Person()--->name = %s, age = %d" % (self.name, self.age)
 
 
 
 class Student(Person):
 	'学生类'
+	def __init__(self, name, age, score):
+		Person.__init__(self, name, age)
+		self.score = score
+		print "Student()--->init()--->name = %s, age = %d" % (self.name, self.age)
+
 
 	def display(self):
-		print "name = %s, age = %d" % (self.name, self.age)
+		print "Student()---->name = %s, age = %d" % (self.name, self.age)
 
-s = Student("Tom", 16)
+s = Student("Tom", 16, 96)
 s.display()
