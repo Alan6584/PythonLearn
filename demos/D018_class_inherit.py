@@ -24,5 +24,9 @@ class Student(Person):
 	def display(self):
 		print "Student()---->name = %s, age = %d" % (self.name, self.age)
 
+
+p = Person("Dave", 18)
+p.display()
+print "--------------------------------"
 s = Student("Tom", 16, 96)
 s.display()
