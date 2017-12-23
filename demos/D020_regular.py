@@ -25,3 +25,13 @@ print ret.group(0)
 print ret.group(1)
 print ret.group(2)
 
+print "-----------------------------------"
+str = "alanwang6584@gmail.com"
+ret = re.match(r'^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$', str)
+
+if ret:
+	print "%s is a valid email!" % (str)
+else:
+	print "%s is not a email!" % (str)
+
+
