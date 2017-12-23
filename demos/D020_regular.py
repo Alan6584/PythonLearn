@@ -17,4 +17,11 @@ if ret:
 else:
 	print "Failed"
 
+print "-----------------------------------"
+str = "010-12345678" # OK
+ret = re.match(r'^(\d{3})\-(\d{3,8})$', str)
+print ret.groups()
+print ret.group(0)
+print ret.group(1)
+print ret.group(2)
 
