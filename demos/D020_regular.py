@@ -29,8 +29,15 @@ print "-----------------------------------"
 # str = "alanwang6584@gmail.com"
 # ret = re.match(r'^[a-zA-Z0-9_-]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$', str)
 
-str = "alan.wang6584@gmail.com"
-ret = re.match(r'^[a-zA-Z0-9_-]+[a-zA-Z0-9_.]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$', str)
+# str = "alan.wang6584@gmail.com"
+# ret = re.match(r'^[a-zA-Z0-9_-]+[a-zA-Z0-9_.]+@[a-zA-Z0-9_-]+(\.[a-zA-Z0-9_-]+)+$', str)
+
+# str = "alan.wang6584@gmail.com"
+# str = "66alan.wang6584@gmail.com"
+str = "66-alan.wang6584@gmail.com"
+ret = re.match(r'^[\w-]+[\w.]+@[\w-]+(\.[\w-]+)+$', str)
+
+
 
 if ret:
 	print "%s is a valid email!" % (str)
