@@ -1,0 +1,451 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/rl_root_activity_preview"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fitsSystemWindows="true"
+        android:orientation="vertical">
+
+        <com.ushowmedia.framework.view.EnhancedRelativeLayout
+            android:id="@+id/lyt_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:er_ratio="1"
+            app:er_baseEdge="width"
+            android:background="#ff000000">
+
+            <!--audio-->
+            <FrameLayout
+                android:id="@+id/lyt_audio"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/img_audio_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#33000000" />
+
+                <com.ushowmedia.framework.view.EnhancedRelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:layout_marginBottom="50dp"
+                    android:layout_marginStart="40dp"
+                    android:layout_marginEnd="40dp"
+                    android:layout_marginTop="30dp"
+                    app:er_baseEdge="shorter"
+                    app:er_ratio="1">
+
+                    <android.support.v7.widget.CardView
+                        android:id="@+id/shadow_layout_audio"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerInParent="true"
+                        android:layout_margin="20dp"
+                        app:cardCornerRadius="14dp"
+                        app:cardElevation="14dp"
+                        app:cardUseCompatPadding="true"
+                        app:cardPreventCornerOverlap="false"
+                        app:cardBackgroundColor="@color/c_black_25" >
+
+                        <android.support.v7.widget.AppCompatImageView
+                            android:id="@+id/img_audio_fg"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="fitXY" />
+
+                        <ToggleButton
+                            android:id="@+id/tgl_preview_audio"
+                            android:layout_width="54dp"
+                            android:layout_height="54dp"
+                            android:layout_gravity="center"
+                            android:background="@drawable/recorderlib_preview_button_pauseplay_selector"
+                            android:checked="true"
+                            android:textOff="@null"
+                            android:textOn="@null" />
+
+                    </android.support.v7.widget.CardView>
+
+                    <TextView
+                        android:id="@+id/btn_album"
+                        android:layout_width="wrap_content"
+                        android:layout_height="28dp"
+                        android:elevation="15dp"
+                        android:layout_alignBottom="@id/shadow_layout_audio"
+                        android:layout_centerHorizontal="true"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginEnd="15dp"
+                        android:layout_marginBottom="8dp"
+                        android:background="@drawable/recorderlib_preview_button_album_selector"
+                        android:maxLines="1"
+                        android:gravity="start | center"
+                        android:paddingStart="16dp"
+                        android:paddingEnd="16dp"
+                        android:text="@string/recorderlib_preview_album"
+                        android:textAllCaps="false"
+                        android:textColor="@color/white"
+                        android:textSize="12sp" />
+
+                </com.ushowmedia.framework.view.EnhancedRelativeLayout>
+
+            </FrameLayout>
+
+            <!--video-->
+            <com.ushowmedia.framework.view.EnhancedRelativeLayout
+                android:id="@+id/lyt_video"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerInParent="true"
+                android:visibility="gone"
+                app:er_baseEdge="shorter"
+                app:er_ratio="1">
+
+                <SurfaceView
+                    android:id="@+id/sfc_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/img_video"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="fitXY" />
+
+            </com.ushowmedia.framework.view.EnhancedRelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="@drawable/recorderlib_preview_head_bg"
+                android:orientation="horizontal">
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/imb_close"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@null"
+                    android:src="@drawable/sm_record_close_btn" />
+
+                <FrameLayout
+                    android:id="@+id/fl_score_preview_activity_preview"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="8dp"
+                    android:visibility="gone"
+                    tools:visibility="visible">
+
+                    <include
+                        layout="@layout/recorderlib_view_preview_score"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </FrameLayout>
+
+                <android.support.v7.widget.AppCompatImageButton
+                    android:id="@+id/imb_feedback"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="5dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_alignParentEnd="true"
+                    android:background="@null"
+                    android:src="@drawable/recorderlib_icon_feedback_preview" />
+            </RelativeLayout>
+
+            <ToggleButton
+                android:id="@+id/tgl_preview_video"
+                android:layout_width="54dp"
+                android:layout_height="54dp"
+                android:layout_centerInParent="true"
+                android:background="@drawable/recorderlib_preview_button_pauseplay_selector"
+                android:checked="true"
+                android:textOff="@null"
+                android:textOn="@null"
+                android:visibility="gone" />
+
+            <View
+                android:id="@+id/v_shadow_playarea_activity_savelocal_post"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true"
+                android:background="@drawable/recorderlib_play_detail_head_bottom_bg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:paddingBottom="10dp">
+
+                <com.ushowmedia.starmaker.general.recorder.ui.lyric.PlayLyricView
+                    android:id="@+id/nlv_activity_preview"
+                    android:layout_width="match_parent"
+                    android:layout_height="26dp"
+                    android:layout_above="@+id/lyt_progress"
+                    android:layout_marginBottom="5dp"
+                    app:plv_lineSpace="10dp"
+                    app:plv_maxLineLength="40"
+                    app:plv_normalTextColor="@android:color/white"
+                    app:plv_normalTextSize="17sp"
+                    app:plv_playHighLightTextColor="@color/record_lyric_play_highlight_color"
+                    app:plv_playTextColor="@color/record_lyric_play_color"
+                    app:plv_playTextSize="18sp"
+                    app:plv_subLineSpace="0dp"
+                    app:plv_need_seek_anim="false"
+                    app:plv_is_current_line_bold="false" />
+
+                <RelativeLayout
+                    android:id="@+id/lyt_progress"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:clipChildren="false">
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txt_current"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        tools:text="00:00" />
+
+                    <android.support.v7.widget.AppCompatTextView
+                        android:id="@+id/txt_duration"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentEnd="true"
+                        android:layout_centerVertical="true"
+                        android:layout_marginEnd="5dp"
+                        android:textColor="@color/white"
+                        android:textSize="13sp"
+                        tools:text="02:20" />
+
+                    <SeekBar
+                        android:id="@+id/skb_progress"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:layout_toStartOf="@id/txt_duration"
+                        android:layout_toEndOf="@id/txt_current"
+                        android:maxHeight="@dimen/margin_normal_2"
+                        android:padding="0dp"
+                        android:paddingEnd="3dp"
+                        android:paddingStart="3dp"
+                        android:progressDrawable="@drawable/custom_gradient_seekbar"
+                        android:splitTrack="false"
+                        android:thumb="@drawable/recorderlib_preview_seekbar_dot_selector"
+                        tools:max="100"
+                        tools:progress="0" />
+
+                </RelativeLayout>
+
+
+            </RelativeLayout>
+
+            <ProgressBar
+                android:id="@+id/pgb_progress"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/margin_normal_2"
+                android:alpha="0"
+                android:progressDrawable="@drawable/custom_gradient_seekbar"
+                android:thumb="@null"
+                android:layout_alignParentBottom="true"
+                tools:max="100"
+                tools:progress="0" />
+        </com.ushowmedia.framework.view.EnhancedRelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@+id/vg_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="visible"
+            tools:visibility="visible"
+            android:background="#FF0E0E0E">
+            <LinearLayout
+                android:id="@+id/lyt_profile"
+                android:layout_width="match_parent"
+                android:layout_height="58dp"
+                android:focusable="true"
+                android:focusableInTouchMode="true"
+                android:orientation="horizontal"
+                android:visibility="gone">
+
+                <android.support.v7.widget.AppCompatImageView
+                    android:id="@+id/img_cover"
+                    android:layout_width="46dp"
+                    android:layout_height="46dp"
+                    android:layout_margin="6dp"
+                    tools:src="@mipmap/ic_launcher" />
+
+                <android.support.v7.widget.AppCompatEditText
+                    android:id="@+id/edt_desc"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:hint="@string/recorderlib_preview_desc_hint"
+                    android:maxEms="140"
+                    android:maxLength="240"
+                    android:paddingBottom="6dp"
+                    android:paddingEnd="10dp"
+                    android:paddingTop="6dp"
+                    android:singleLine="true"
+                    android:textColor="@color/white"
+                    android:textColorHint="#ff9B9B9B" />
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.3dp"
+                android:background="#33ffffff"
+                android:visibility="gone"/>
+
+            <LinearLayout
+                android:id="@+id/lyt_action"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:layout_alignParentBottom="true"
+                android:background="#34FFFFFF"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/btn_save"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:paddingTop="2dp"
+                    android:textSize="12sp"
+                    android:layout_marginStart="15dp"
+                    android:drawableTop="@drawable/recorderlib_icon_savedraft_preview"
+                    android:drawablePadding="-5dp"
+                    android:text="@string/recorderlib_recording_preview_draft"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/btn_resing"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginEnd="15dp"
+                    android:layout_weight="1"
+                    android:textAllCaps="true"
+                    android:gravity="center"
+                    android:paddingTop="2dp"
+                    android:textSize="12sp"
+                    android:drawableTop="@drawable/recorderlib_icon_resing_preview"
+                    android:drawablePadding="-5dp"
+                    android:text="@string/recorderlib_dialog_restart"
+                    android:textColor="@color/white" />
+
+                <TextView
+                    android:id="@+id/btn_post"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1.4"
+                    android:background="@color/control_tray_control"
+                    android:text="@string/recorderlib_preview_post"
+                    android:textAllCaps="true"
+                    android:textSize="14sp"
+                    android:gravity="center"
+                    android:textStyle="bold"
+                    android:textColor="@color/white" />
+            </LinearLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_above="@+id/lyt_action">
+
+                <com.flyco.tablayout.CommonTabLayout
+                    android:id="@+id/tab_control"
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:background="#FF151515"
+                    app:tl_indicator_color="@color/recoding_trayview_bg_color"
+                    app:tl_indicator_height="8dp"
+                    app:tl_indicator_style="TRIANGLE"
+                    app:tl_indicator_width="16dp"
+                    app:tl_textAllCaps="true"
+                    app:tl_textBold="SELECT"
+                    app:tl_textSelectColor="@android:color/white"
+                    app:tl_textUnselectColor="@color/recorderlib_preview_tab_normal_color"
+                    app:tl_textsize="13sp"
+                    app:tl_indicator_has_triangle_line="true"
+                    app:tl_underline_color="#262626"
+                    app:tl_underline_height="0.5dp"/>
+
+                <FrameLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/tab_control">
+                    <com.ushowmedia.starmaker.general.recorder.ui.SMControlTrayView
+                        android:id="@+id/csm_control"
+                        android:layout_width="match_parent"
+                        android:layout_height="120dp"
+                        android:layout_gravity="center_vertical"/>
+                </FrameLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.3dp"
+                    android:layout_below="@+id/tab_control"
+                    android:layout_marginTop="-0.3dp"
+                    android:background="#33ffffff"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/lyt_guide_cover"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginBottom="260dp"
+        android:background="@drawable/recorderlib_bg_preview_guide_cover"
+        android:text="@string/recorderlib_preview_guide_cover"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_14"
+        android:visibility="gone"
+        tools:visibility="gone" />
+
+    <android.support.v7.widget.AppCompatTextView
+        android:id="@+id/lyt_guide_post"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom|end"
+        android:layout_marginBottom="@dimen/margin_normal_44"
+        android:background="@drawable/recorderlib_bg_preview_guide_post"
+        android:text="@string/recorderlib_preview_guide_post"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_14"
+        android:visibility="gone"
+        tools:visibility="gone" />
+</FrameLayout>
