@@ -45,14 +45,16 @@ def list_dir(file_dir):
 		通过 listdir 得到的是仅当前路径下的文件名，不包括子目录中的文件，如果需要得到所有文件需要递归
 	'''
 	print'\n\n<><><><><><><><><><><><><><><><><><><><><><><> listdir <><><><><><><><><><><><><><><><><><><><><><><><>><>'
-	list_dir = os.listdir(file_dir) # 获取目录下的所有文件和目录（只访问一级）
-	for cur_file in list_dir:
+	print "current dir : {0}".format(file_dir)
+	dir_list = os.listdir(file_dir) # 获取目录下的所有文件和目录（只访问一级）
+	for cur_file in dir_list:
 		# 获取文件的绝对路径
 		path = os.path.join(file_dir, cur_file)
 		if os.path.isfile(path): # 判断是否是文件还是目录需要用绝对路径
 			print "{0} : is file!".format(cur_file)
 		if os.path.isdir(path):
 			print "{0} : is dir!".format(cur_file)
+			# list_dir(path)
 
 
 def handle_dir(file_dir):
