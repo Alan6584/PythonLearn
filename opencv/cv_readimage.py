@@ -6,7 +6,6 @@
 @Email   : alanwang6584@gmail.com
 """
 
-import numpy as np
 import cv2 as cv
  
 img = cv.imread('/Users/wangjianjun/Desktop/Debug/pics/aaa.jpeg', cv.IMREAD_UNCHANGED) # 按原始颜色格式读取图片
